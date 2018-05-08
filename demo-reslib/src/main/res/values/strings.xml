@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">demo-reslib</string>
+    <string name="name_t">reslib-t</string>
+    <string name="name_age">reslib-age</string>
+</resources>

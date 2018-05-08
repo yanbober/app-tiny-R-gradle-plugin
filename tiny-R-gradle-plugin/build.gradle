@@ -1,0 +1,25 @@
+apply plugin: 'groovy'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    compileOnly 'com.android.tools.build:gradle:3.1.0'
+}
+
+if (project.properties.useLocal == 'true') {
+    apply plugin: 'maven'
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: uri('../repo'))
+            }
+        }
+    }
+} else {
+    apply plugin: 'com.github.dcendents.android-maven'
+}
+
+version = '1.0.0'
+group = 'com.github.yanbober'
+archivesBaseName = 'app-tiny-R-gradle-plugin'
