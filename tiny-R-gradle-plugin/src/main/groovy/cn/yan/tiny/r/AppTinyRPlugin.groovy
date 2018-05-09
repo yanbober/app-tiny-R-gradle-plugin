@@ -58,7 +58,6 @@ class AppTinyRPlugin implements Plugin<Project> {
     }
 
     private void androidVariantRun(Project project, BaseExtension android, boolean debug) {
-        android.defaultConfig.applicationId
         android.applicationVariants.all { ApkVariant variant ->
             variant.outputs.each { BaseVariantOutput output ->
                 def taskName = "transformClassesAndResourcesWithProguardFor${variant.name.capitalize()}"
